@@ -1,0 +1,34 @@
+#include <cstdio>
+#include <cstring>
+#include <cmath>
+#include <algorithm>
+
+using namespace std;
+
+#define sz .size()
+#define rep(i, a, b) for(int i = a; i<b; i++) 
+
+typedef long long int ll;
+
+int n;
+
+int x[16], y[16];
+double d[16][16];
+
+static inline double dist(int x1, int y1, int x2, int y2){
+  int xd = x1-x2;
+  int yd = y1-y2;
+  return xd*xd + yd*yd;
+}
+
+void solve(){
+  rep(i, 0, 2*n)
+    scanf("%d%d", x+i, y+i);
+  rep(i, 0, 2*n
+    rep(j, 0, i)
+      d[i][j] = d[j][i] = dist(x[i], y[i], x[j], y[j]);
+}
+
+int main(){
+  while(scanf("%d", &n) && n) solve();
+}
